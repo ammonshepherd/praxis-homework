@@ -42,12 +42,14 @@ echo "<h3>Assignment 2: Time traveller</h3>";
 
 $year = $_GET["year"];
 
-if (1900 >= $year) {
+if (1900 >= $year && !empty($year)) {
     echo "Greetings traveler from the year $year! Would you like to join or wagon train heading West?";
 } elseif (1900 < $year && $year <= 2020) {
     echo "Greetings traveller from the year $year! What is your favorite T.V. show?";
-} else {
+} elseif ($year > 2020) {
     echo "Greetings taveller from the year $year! What stock should I invest in?";
+} else {
+    echo "Add a 'year' variable to the URL.";
 }
 
 
